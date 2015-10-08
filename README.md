@@ -7,7 +7,7 @@ Use UIStackView as if it supports iOS6.
 UIStackView is a very handy tool to build flow layout, but it's available only when iOS9+, we've found some great compatible replacements like OAStackView, but we want more:  
 
 - **Perfect downward compatible**, no infectivity, use UIStackView **directly** as if it's shipped from iOS6.
-- Interface builder support, live preview.
+- **Interface builder support**, live preview.
 - Keep layout constraints as closely as UIStackView constructs.
 
 # Usage
@@ -17,7 +17,7 @@ UIStackView is a very handy tool to build flow layout, but it's available only w
 - It will automatically replace the symbol for UIStackView into FDStackView at runtime before iOS9. 
 
 ``` objc
-// Works in iOS6+
+// Works in iOS6+, use it directly.
 UIStackView *stackView = [[UIStackView alloc] init];
 stackView.axis = UILayoutConstraintAxisHorizontal;
 stackView.distribution = UIStackViewDistributionFill;
@@ -30,11 +30,16 @@ stackView.alignment = UIStackViewAlignmentTop;
 
 Set `Builds for` option to `iOS 9.0 and later` to eliminate the version error in Xcode:
 
-![How to use in IB](https://git.oschina.net/sunnyxx/FDStackView/raw/master/Snapshots/snapshot0.png?dir=0&filepath=Snapshots%2Fsnapshot0.png&oid=4b839935a0da5538fe4b0639e87783a982d51ee4&sha=8f3b47fc70f96a40e2e5ec595aebdb2a1db57dab)
+![How to use in IB](https://raw.githubusercontent.com/forkingdog/FDStackView/master/Snapshots/snapshot0.png)
 
 Now, use UIStackView as you like and its reactive options and live preview: 
 
-![UIStackView preview in IB](https://git.oschina.net/sunnyxx/FDStackView/raw/master/Snapshots/snapshot1.png?dir=0&filepath=Snapshots%2Fsnapshot1.png&oid=791307e2d501dbbfcb65ca48f443222482b29acc&sha=7c0b8ddedd02a6551151517f88dc38c3ea1ca799)
+![UIStackView preview in IB](https://raw.githubusercontent.com/forkingdog/FDStackView/master/Snapshots/snapshot1.png)
+
+# Requirements
+
+- Xcode 7+ (For interface builder supports and the latest Objective-C Syntax)
+- Base SDK iOS 9.0+ (To link UIStackView symbol in UIKit)
 
 # License
 
