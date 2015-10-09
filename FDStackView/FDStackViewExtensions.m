@@ -39,11 +39,10 @@
         // iOS6 patch
         if(class_getProperty(self, "identifier")) {
             SEL getterSelector = sel_registerName("identifier");
-            BOOL res = class_addMethod(self, getterSelector, imp_implementationWithBlock(^(id self) {
+            class_addMethod(self, getterSelector, imp_implementationWithBlock(^(id self) {
                 return objc_getAssociatedObject(self, getterSelector);
             }), "@@");
-            
-            res = class_addMethod(self, sel_registerName("setIdentifier:"), imp_implementationWithBlock(^(id self, id value) {
+            class_addMethod(self, sel_registerName("setIdentifier:"), imp_implementationWithBlock(^(id self, id value) {
                 objc_setAssociatedObject(self, getterSelector, value, OBJC_ASSOCIATION_COPY_NONATOMIC);
             }), "v@:@");
         }
