@@ -241,7 +241,7 @@
     switch (self.alignment) {
         case UIStackViewAlignmentCenter:
         case UIStackViewAlignmentFirstBaseline:
-        case UIStackViewAlignmentLastBaseline :{
+        case UIStackViewAlignmentLastBaseline: {
             if (attribute == self.minAttributeForCanvasConnections) {
                 return NSLayoutRelationLessThanOrEqual;
             } else if (attribute == self.maxAttributeForCanvasConnections) {

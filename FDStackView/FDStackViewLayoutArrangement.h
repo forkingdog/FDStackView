@@ -43,7 +43,7 @@
 @property (nonatomic, strong) NSMutableArray<UIView *> *mutableItems;
 @property (nonatomic, strong) NSMutableArray<NSLayoutConstraint *> *canvasConnectionConstraints;
 
-- (id)initWithItems:(NSArray<UIView *> *)items onAxis:(UILayoutConstraintAxis)axis;
+- (instancetype)initWithItems:(NSArray<UIView *> *)items onAxis:(UILayoutConstraintAxis)axis;
 - (void)insertItem:(UIView *)item atIndex:(NSUInteger)index;
 - (void)removeItem:(UIView *)item;
 - (void)addItem:(UIView *)item;
