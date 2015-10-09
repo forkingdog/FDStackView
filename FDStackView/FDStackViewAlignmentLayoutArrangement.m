@@ -26,7 +26,6 @@
 
 @interface FDStackViewAlignmentLayoutArrangement ()
 @property (nonatomic, assign) BOOL alignmentChanged;
-@property (nonatomic, strong) NSMapTable<UIView *, NSLayoutConstraint *> *hiddingDimensionConstraints;
 @property (nonatomic, strong) FDLayoutSpacer *spanningLayoutGuide;
 @end
 
@@ -39,6 +38,13 @@
         _alignmentConstraints = [NSMutableDictionary dictionary];
     }
     return _alignmentConstraints;
+}
+
+- (NSMapTable<UIView *,NSLayoutConstraint *> *)hiddingDimensionConstraints {
+    if (!_hiddingDimensionConstraints) {
+        _hiddingDimensionConstraints = [NSMapTable weakToWeakObjectsMapTable];
+    }
+    return _hiddingDimensionConstraints;
 }
 
 - (NSString *)alignmentConstraintsFirstKey {
@@ -382,6 +388,8 @@
 - (void)updateAlignmentItemsConstraintsIfNecessary {
     [self.alignmentConstraints setObject:[NSMapTable weakToWeakObjectsMapTable] forKey:self.alignmentConstraintsFirstKey];
     [self.alignmentConstraints setObject:[NSMapTable weakToWeakObjectsMapTable] forKey:self.alignmentConstraintsSecondKey];
+    [self.canvas removeConstraints:self.hiddingDimensionConstraints.fd_allObjects];
+    [self.hiddingDimensionConstraints removeAllObjects];
     self.hiddingDimensionConstraints = [NSMapTable weakToStrongObjectsMapTable];
     
     UIView *guardView = self.mutableItems.firstObject;
@@ -408,6 +416,7 @@
         }
         if (item.hidden) {
             NSLayoutConstraint *hiddenConstraint = [NSLayoutConstraint constraintWithItem:item attribute:self.axis == UILayoutConstraintAxisHorizontal ? NSLayoutAttributeHeight : NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
+            hiddenConstraint.identifier = @"FDSV-hidding";
             [self.canvas addConstraint:hiddenConstraint];
             [self.hiddingDimensionConstraints setObject:hiddenConstraint forKey:item];
         }
