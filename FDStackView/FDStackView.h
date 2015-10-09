@@ -33,9 +33,9 @@
 // No need to use this class directly, it is the internal class that actually works before iOS9.
 @interface FDStackView : UIView
 
-- (instancetype)initWithArrangedSubviews:(NSArray *)views;
+- (instancetype)initWithArrangedSubviews:(NSArray<__kindof UIView *> *)views;
 
-@property (nonatomic, copy, readonly) NSArray *arrangedSubviews;
+@property (nonatomic, copy, readonly) NSArray<__kindof UIView *> *arrangedSubviews;
 
 - (void)addArrangedSubview:(UIView *)view;
 - (void)removeArrangedSubview:(UIView *)view;

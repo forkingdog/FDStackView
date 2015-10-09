@@ -53,7 +53,7 @@
     return self;
 }
 
-- (instancetype)initWithArrangedSubviews:(NSArray *)views {
+- (instancetype)initWithArrangedSubviews:(NSArray<__kindof UIView *> *)views {
     self = [super initWithFrame:CGRectZero];
     if (self) {
         [self commonInitializationWithArrangedSubviews:views];
@@ -61,7 +61,7 @@
     return self;
 }
 
-- (void)commonInitializationWithArrangedSubviews:(NSArray *)arrangedSubviews {
+- (void)commonInitializationWithArrangedSubviews:(NSArray<__kindof UIView *> *)arrangedSubviews {
     for (UIView *view in arrangedSubviews) {
         [self addHiddenObserverForView:view];
     }
@@ -78,7 +78,7 @@
 
 #pragma mark - Public Arranged Subviews Operations
 
-- (NSArray *)arrangedSubviews {
+- (NSArray<UIView *> *)arrangedSubviews {
     return self.mutableArrangedSubviews.copy;
 }
 
