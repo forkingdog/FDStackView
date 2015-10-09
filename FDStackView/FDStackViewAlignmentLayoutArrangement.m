@@ -416,7 +416,8 @@
         }
         if (item.hidden) {
             NSLayoutConstraint *hiddenConstraint = [NSLayoutConstraint constraintWithItem:item attribute:self.axis == UILayoutConstraintAxisHorizontal ? NSLayoutAttributeHeight : NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
-            hiddenConstraint.identifier = @"FDSV-hidding";
+            hiddenConstraint.priority = [item contentCompressionResistancePriorityForAxis:self.axis == UILayoutConstraintAxisHorizontal ? UILayoutConstraintAxisVertical : UILayoutConstraintAxisHorizontal];
+            hiddenConstraint.identifier = @"FDSV-hiding";
             [self.canvas addConstraint:hiddenConstraint];
             [self.hiddingDimensionConstraints setObject:hiddenConstraint forKey:item];
         }

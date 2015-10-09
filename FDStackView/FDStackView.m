@@ -112,11 +112,15 @@
 }
 
 - (void)insertArrangedSubview:(UIView *)view atIndex:(NSUInteger)stackIndex {
+    if (!view || [self.mutableArrangedSubviews containsObject:view]) {
+        return;
+    }
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self insertSubview:view atIndex:stackIndex];
     [self.mutableArrangedSubviews insertObject:view atIndex:stackIndex];
     [self.alignmentArrangement insertItem:view atIndex:stackIndex];
     [self.distributionArrangement insertItem:view atIndex:stackIndex];
-    [self insertSubview:view atIndex:stackIndex];
-    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addHiddenObserverForView:view];
     [self setNeedsUpdateConstraints];
 }
 
