@@ -25,7 +25,7 @@
 #import "FDLayoutSpacer.h"
 
 @interface FDStackViewAlignmentLayoutArrangement ()
-@property (nonatomic, assign) BOOL alignmentChanged;
+@property (nonatomic, assign) BOOL spanningGuideConstraintsNeedUpdate;
 @property (nonatomic, strong) FDLayoutSpacer *spanningLayoutGuide;
 @end
 
@@ -168,6 +168,7 @@
 - (FDLayoutSpacer *)spanningLayoutGuide {
     if (!_spanningLayoutGuide) {
         [self createSpanningLayoutGuide];
+        _spanningGuideConstraintsNeedUpdate = YES;
         [self updateSpanningLayoutGuideConstraintsIfNecessary];
     }
     return _spanningLayoutGuide;
@@ -186,7 +187,7 @@
     if (_alignment != alignment) {
         [self configureValidAlignment:&alignment forAxis:self.axis];
         _alignment = alignment;
-        _alignmentChanged = YES;
+        _spanningGuideConstraintsNeedUpdate = YES;
     }
 }
 
@@ -342,8 +343,8 @@
 }
 
 - (BOOL)spanningGuideConstraintsNeedUpdate {
-    if (self.alignment != UIStackViewAlignmentFill && self.alignmentChanged) {
-        self.alignmentChanged = NO;
+    if (self.alignment != UIStackViewAlignmentFill && _spanningGuideConstraintsNeedUpdate) {
+        _spanningGuideConstraintsNeedUpdate = NO;
         return YES;
     }
     return NO;
@@ -428,7 +429,8 @@
         }
         if (item.hidden) {
             NSLayoutConstraint *hiddenConstraint = [NSLayoutConstraint constraintWithItem:item attribute:self.axis == UILayoutConstraintAxisHorizontal ? NSLayoutAttributeHeight : NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
-            hiddenConstraint.identifier = @"FDSV-hidding";
+            hiddenConstraint.priority = [item contentCompressionResistancePriorityForAxis:self.axis == UILayoutConstraintAxisHorizontal ? UILayoutConstraintAxisVertical : UILayoutConstraintAxisHorizontal];
+            hiddenConstraint.identifier = @"FDSV-hiding";
             [self.canvas addConstraint:hiddenConstraint];
             [self.hiddingDimensionConstraints setObject:hiddenConstraint forKey:item];
         }

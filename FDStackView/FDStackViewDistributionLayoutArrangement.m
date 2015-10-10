@@ -72,7 +72,7 @@
             spacing.constant = 0;
             NSLayoutAttribute dimensionAttribute = [self dimensionAttributeForCurrentAxis];
             NSLayoutConstraint *dimensionConstraint = [NSLayoutConstraint constraintWithItem:offset attribute:dimensionAttribute relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
-            dimensionConstraint.identifier = @"FDSV-hidding";
+            dimensionConstraint.identifier = @"FDSV-hiding";
             [self.canvas addConstraint:dimensionConstraint];
             [self.hiddingDimensionConstraints setObject:dimensionConstraint forKey:offset];
         }
