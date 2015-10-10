@@ -31,12 +31,13 @@
 		484BAB531BC67ACA00D86EBB /* FDTransformLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 484BAB3C1BC67ACA00D86EBB /* FDTransformLayer.h */; settings = {ASSET_TAGS = (); }; };
 		484BAB541BC67ACA00D86EBB /* FDTransformLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 484BAB3D1BC67ACA00D86EBB /* FDTransformLayer.m */; settings = {ASSET_TAGS = (); }; };
 		484BAB551BC67ACA00D86EBB /* FDTransformLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 484BAB3D1BC67ACA00D86EBB /* FDTransformLayer.m */; settings = {ASSET_TAGS = (); }; };
+		484BAB681BC8BDBC00D86EBB /* FDCodeBasedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484BAB671BC8BDBC00D86EBB /* FDCodeBasedViewController.m */; settings = {ASSET_TAGS = (); }; };
 		48A1298A1B9BE5E500EF9265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A129891B9BE5E500EF9265 /* main.m */; };
 		48A1298D1B9BE5E500EF9265 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1298C1B9BE5E500EF9265 /* AppDelegate.m */; };
 		48A129931B9BE5E500EF9265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A129911B9BE5E500EF9265 /* Main.storyboard */; };
 		48A129951B9BE5E500EF9265 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A129941B9BE5E500EF9265 /* Images.xcassets */; };
 		48A129981B9BE5E500EF9265 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A129961B9BE5E500EF9265 /* LaunchScreen.xib */; };
-		E153018E1BA8110C00C857EF /* FDDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E153018D1BA8110C00C857EF /* FDDemoTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E153018E1BA8110C00C857EF /* FDStoryboardBasedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E153018D1BA8110C00C857EF /* FDStoryboardBasedViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +70,8 @@
 		484BAB3B1BC67ACA00D86EBB /* FDStackViewLayoutArrangement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStackViewLayoutArrangement.m; sourceTree = "<group>"; };
 		484BAB3C1BC67ACA00D86EBB /* FDTransformLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTransformLayer.h; sourceTree = "<group>"; };
 		484BAB3D1BC67ACA00D86EBB /* FDTransformLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTransformLayer.m; sourceTree = "<group>"; };
+		484BAB661BC8BDBC00D86EBB /* FDCodeBasedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCodeBasedViewController.h; sourceTree = "<group>"; };
+		484BAB671BC8BDBC00D86EBB /* FDCodeBasedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCodeBasedViewController.m; sourceTree = "<group>"; };
 		48A129841B9BE5E500EF9265 /* FDStackViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FDStackViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A129881B9BE5E500EF9265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48A129891B9BE5E500EF9265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,8 +80,8 @@
 		48A129921B9BE5E500EF9265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48A129941B9BE5E500EF9265 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		48A129971B9BE5E500EF9265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E153018C1BA8110C00C857EF /* FDDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDDemoTableViewController.h; sourceTree = "<group>"; };
-		E153018D1BA8110C00C857EF /* FDDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDDemoTableViewController.m; sourceTree = "<group>"; };
+		E153018C1BA8110C00C857EF /* FDStoryboardBasedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStoryboardBasedViewController.h; sourceTree = "<group>"; };
+		E153018D1BA8110C00C857EF /* FDStoryboardBasedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStoryboardBasedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +149,10 @@
 				48A1298B1B9BE5E500EF9265 /* AppDelegate.h */,
 				48A1298C1B9BE5E500EF9265 /* AppDelegate.m */,
 				48A129911B9BE5E500EF9265 /* Main.storyboard */,
-				E153018C1BA8110C00C857EF /* FDDemoTableViewController.h */,
-				E153018D1BA8110C00C857EF /* FDDemoTableViewController.m */,
+				E153018C1BA8110C00C857EF /* FDStoryboardBasedViewController.h */,
+				E153018D1BA8110C00C857EF /* FDStoryboardBasedViewController.m */,
+				484BAB661BC8BDBC00D86EBB /* FDCodeBasedViewController.h */,
+				484BAB671BC8BDBC00D86EBB /* FDCodeBasedViewController.m */,
 				48A129941B9BE5E500EF9265 /* Images.xcassets */,
 				48A129961B9BE5E500EF9265 /* LaunchScreen.xib */,
 				48A129871B9BE5E500EF9265 /* Supporting Files */,
@@ -229,6 +234,7 @@
 				KnownAssetTags = (
 					demo,
 				);
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = forkingdog;
 				TargetAttributes = {
@@ -237,6 +243,7 @@
 					};
 					48A129831B9BE5E500EF9265 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Q3443S8FFW;
 					};
 				};
 			};
@@ -301,7 +308,8 @@
 				484BAB421BC67ACA00D86EBB /* FDLayoutSpacer.m in Sources */,
 				484BAB541BC67ACA00D86EBB /* FDTransformLayer.m in Sources */,
 				484BAB481BC67ACA00D86EBB /* FDStackViewAlignmentLayoutArrangement.m in Sources */,
-				E153018E1BA8110C00C857EF /* FDDemoTableViewController.m in Sources */,
+				484BAB681BC8BDBC00D86EBB /* FDCodeBasedViewController.m in Sources */,
+				E153018E1BA8110C00C857EF /* FDStoryboardBasedViewController.m in Sources */,
 				484BAB3F1BC67ACA00D86EBB /* FDGapLayoutGuide.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,11 +442,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FDStackViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.forkingdog.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f3885f66-1ec2-4718-b197-0dc5422cb085";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -446,11 +458,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FDStackViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.forkingdog.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f3885f66-1ec2-4718-b197-0dc5422cb085";
 			};
 			name = Release;
 		};
@@ -464,6 +479,7 @@
 				484BAAF91BC66FC100D86EBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48A1297F1B9BE5E500EF9265 /* Build configuration list for PBXProject "FDStackViewDemo" */ = {
 			isa = XCConfigurationList;

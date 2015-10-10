@@ -1,14 +1,14 @@
 //
-//  FDDemoTableViewController.m
+//  FDStoryboardBasedViewController.m
 //  FDStackViewDemo
 //
 //  Created by sunnyxx on 15/9/15.
 //  Copyright © 2015 forkingdog. All rights reserved.
 //
 
-#import "FDDemoTableViewController.h"
+#import "FDStoryboardBasedViewController.h"
 
-@interface FDDemoTableViewController ()
+@interface FDStoryboardBasedViewController ()
 @property (nonatomic, weak) IBOutlet UIStackView *stackView;
 @property (nonatomic, weak) IBOutlet UIImageView *forkingdogImageView;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *axisSegmentControl;
@@ -19,18 +19,11 @@
 @property (nonatomic, strong) NSMutableArray *mutableAddingViews;
 @end
 
-@implementation FDDemoTableViewController
+@implementation FDStoryboardBasedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateFromStackViewAttributes];
-    
-    UIStackView *stackView = [[UIStackView alloc] init];
-    stackView.axis = UILayoutConstraintAxisHorizontal;
-    stackView.distribution = UIStackViewDistributionFill;
-    stackView.alignment = UIStackViewAlignmentTop;
-    [stackView addArrangedSubview:[[UILabel alloc] init]];
-    [self.view addSubview:stackView];
 }
 
 - (void)updateFromStackViewAttributes {
@@ -39,7 +32,7 @@
     self.distributionSegmentControl.selectedSegmentIndex = self.stackView.distribution;
     self.spacingLabel.text = [NSString stringWithFormat:@"Spacing (%.1lf)", self.stackView.spacing];
     CGSize headerSize = [self.tableView.tableHeaderView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, headerSize.width ?: CGRectGetWidth(self.view.frame), headerSize.height ?: 150);
+    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, headerSize.width ?: CGRectGetWidth(self.view.frame), headerSize.height);
     self.tableView.tableHeaderView = self.tableView.tableHeaderView;
 }
 

@@ -1,5 +1,5 @@
 //
-//  FDDemoTableViewController.h
+//  FDStoryboardBasedViewController.h
 //  FDStackViewDemo
 //
 //  Created by sunnyxx on 15/9/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FDDemoTableViewController : UITableViewController
+@interface FDStoryboardBasedViewController : UITableViewController
 
 @end

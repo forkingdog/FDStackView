@@ -274,6 +274,10 @@
 }
 
 - (void)updateCanvasConnectionConstraintsIfNecessary {
+    if (self.mutableItems.count == 0) {
+        return;
+    }
+    
     [self.canvas removeConstraints:self.canvasConnectionConstraints];
     [self.canvasConnectionConstraints removeAllObjects];
     
@@ -357,6 +361,10 @@
 }
 
 - (void)updateSpanningLayoutGuideConstraintsIfNecessary {
+    if (self.mutableItems.count == 0) {
+        return;
+    }
+    
     if (self.spanningLayoutGuide && self.spanningGuideConstraintsNeedUpdate) {
         [self.canvas removeConstraints:self.spanningLayoutGuide.systemConstraints];
         [self.spanningLayoutGuide.systemConstraints removeAllObjects];
@@ -386,6 +394,10 @@
 }
 
 - (void)updateAlignmentItemsConstraintsIfNecessary {
+    if (self.mutableItems.count == 0) {
+        return;
+    }
+    
     [self.alignmentConstraints setObject:[NSMapTable weakToWeakObjectsMapTable] forKey:self.alignmentConstraintsFirstKey];
     [self.alignmentConstraints setObject:[NSMapTable weakToWeakObjectsMapTable] forKey:self.alignmentConstraintsSecondKey];
     [self.canvas removeConstraints:self.hiddingDimensionConstraints.fd_allObjects];
