@@ -172,6 +172,12 @@
         SEL selector = NSSelectorFromString(@"_intrinsicContentSizeInvalidatedForChildView:");
         Method method = class_getInstanceMethod(self, @selector(intrinsicContentSizeInvalidatedForChildView:));
         class_addMethod(self, selector, method_getImplementation(method), method_getTypeEncoding(method));
+#if (__IPHONE_OS_VERSION_MAX_ALLOWED >= 90000)
+        if (Nil == UIStackView.class) {
+            Class newClass = objc_allocateClassPair(self, "UIStackView", 0);
+            objc_registerClassPair(newClass);
+        }
+#endif
     });
 }
 
