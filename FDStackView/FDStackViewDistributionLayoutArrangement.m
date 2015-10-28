@@ -61,24 +61,28 @@
     [self.canvas removeConstraints:self.hiddingDimensionConstraints.fd_allObjects];
     [self.hiddingDimensionConstraints removeAllObjects];
 
-    
     UIView *offset = self.items.car;
     for (UIView *view in self.items.cdr) {
         NSLayoutAttribute attribute = [self minAttributeForGapConstraint];
         NSLayoutRelation relation = [self edgeToEdgeRelation];
         NSLayoutConstraint *spacing = [NSLayoutConstraint constraintWithItem:view attribute:attribute relatedBy:relation toItem:offset attribute:attribute + 1 multiplier:1 constant:self.spacing];
         spacing.identifier = @"FDSV-spacing";
-        if (offset.hidden) {
-            spacing.constant = 0;
-            NSLayoutAttribute dimensionAttribute = [self dimensionAttributeForCurrentAxis];
-            NSLayoutConstraint *dimensionConstraint = [NSLayoutConstraint constraintWithItem:offset attribute:dimensionAttribute relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
-            dimensionConstraint.identifier = @"FDSV-hiding";
-            [self.canvas addConstraint:dimensionConstraint];
-            [self.hiddingDimensionConstraints setObject:dimensionConstraint forKey:offset];
-        }
         [self.canvas addConstraint:spacing];
         [self.edgeToEdgeConstraints setObject:spacing forKey:offset];
+        if (offset.hidden) {
+            spacing.constant = 0;
+        }
         offset = view;
+    }
+    // hidding dimensions
+    for (UIView *view in self.items) {
+        if (view.hidden) {
+            NSLayoutAttribute dimensionAttribute = [self dimensionAttributeForCurrentAxis];
+            NSLayoutConstraint *dimensionConstraint = [NSLayoutConstraint constraintWithItem:view attribute:dimensionAttribute relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
+            dimensionConstraint.identifier = @"FDSV-hiding";
+            [self.canvas addConstraint:dimensionConstraint];
+            [self.hiddingDimensionConstraints setObject:dimensionConstraint forKey:view];
+        }
     }
 }
 
