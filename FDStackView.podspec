@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.platform = :ios, "6.0"
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source = { :git => "https://github.com/forkingdog/FDStackView.git", :tag => "1.0.alpha" }
+  s.source = { :git => "https://github.com/forkingdog/FDStackView.git", :tag => "1.0-alpha" }
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.source_files  = "FDStackView/*.{h,m}"
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
