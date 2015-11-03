@@ -62,6 +62,7 @@
     [self.hiddingDimensionConstraints removeAllObjects];
 
     UIView *offset = self.items.car;
+    UIView *last = self.items.lastObject;
     for (UIView *view in self.items.cdr) {
         NSLayoutAttribute attribute = [self minAttributeForGapConstraint];
         NSLayoutRelation relation = [self edgeToEdgeRelation];
@@ -69,7 +70,7 @@
         spacing.identifier = @"FDSV-spacing";
         [self.canvas addConstraint:spacing];
         [self.edgeToEdgeConstraints setObject:spacing forKey:offset];
-        if (offset.hidden) {
+        if (offset.hidden || (view == last && view.hidden)) {
             spacing.constant = 0;
         }
         offset = view;
