@@ -13,6 +13,12 @@ UIStackView is a very handy tool to build flow layout, but it's available only w
 
 # Usage
 
+#### Podfile
+```ruby
+platform :ios, '7.0'
+pod "FDStackView", "1.0-alpha"
+```
+
 **Import nothing, learn nothing, it just works.**
 
 - It will automatically replace the symbol for UIStackView into FDStackView at runtime before iOS9. 
