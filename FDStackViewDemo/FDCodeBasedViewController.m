@@ -8,7 +8,6 @@
 
 #import "FDCodeBasedViewController.h"
 
-#define UIStackView_class NSClassFromString(@"UIStackView")
 
 @implementation FDCodeBasedViewController
 
@@ -21,7 +20,7 @@
     UILabel *dogLabel = [[UILabel alloc] init];
     dogLabel.text = @"dog";
     
-    UIStackView *stackView = [[UIStackView_class alloc] initWithArrangedSubviews:@[forkingLabel, logoImageView, dogLabel]];
+    UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:@[forkingLabel, logoImageView, dogLabel]];
     stackView.translatesAutoresizingMaskIntoConstraints = NO;
     stackView.axis = UILayoutConstraintAxisHorizontal;
     stackView.distribution = UIStackViewDistributionFill;
