@@ -275,9 +275,7 @@
 }
 
 - (void)updateCanvasConnectionConstraintsIfNecessary {
-    if (self.mutableItems.count == 0) {
-        return;
-    }
+    if (!self.mutableItems.count) return;
     
     [self.canvas removeConstraints:self.canvasConnectionConstraints];
     [self.canvasConnectionConstraints removeAllObjects];
@@ -292,13 +290,19 @@
         [self.canvas addConstraint:canvasFitConstraint];
         [self.canvasConnectionConstraints addObject:canvasFitConstraint];
     }
-    
     [canvasAttributes enumerateObjectsUsingBlock:^(NSNumber * _Nonnull canvasAttribute, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLayoutAttribute attribute = canvasAttribute.integerValue;
-        NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:[self viewOrGuideForLocationAttribute:attribute] attribute:attribute relatedBy:[self layoutRelationForCanvasConnectionForAttribute:attribute] toItem:self.canvas attribute:attribute multiplier:1 constant:0];
-        constraint.identifier = @"FDSV-canvas-connection";
-        [self.canvas addConstraint:constraint];
-        [self.canvasConnectionConstraints addObject:constraint];
+        @try {
+            NSLayoutAttribute attribute = canvasAttribute.integerValue;
+            NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:[self viewOrGuideForLocationAttribute:attribute] attribute:attribute relatedBy:[self layoutRelationForCanvasConnectionForAttribute:attribute] toItem:self.canvas attribute:attribute multiplier:1 constant:0];
+            constraint.identifier = @"FDSV-canvas-connection";
+            [self.canvas addConstraint:constraint];
+            [self.canvasConnectionConstraints addObject:constraint];
+        }
+        @catch (NSException *exception) {
+        }
+        @finally {
+            
+        }
     }];
 }
 
