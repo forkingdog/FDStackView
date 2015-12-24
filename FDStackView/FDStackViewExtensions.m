@@ -37,7 +37,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         // iOS6 patch
-        if(class_getProperty(self, "identifier")) {
+        if(!class_getProperty(self, "identifier")) {
             SEL getterSelector = sel_registerName("identifier");
             class_addMethod(self, getterSelector, imp_implementationWithBlock(^(id self) {
                 return objc_getAssociatedObject(self, getterSelector);
