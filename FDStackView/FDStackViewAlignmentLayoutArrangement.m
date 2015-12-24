@@ -194,7 +194,7 @@
 #pragma mark - Override Methods
 
 - (void)removeDeprecatedConstraints {
-    [self.alignmentConstraints enumerateKeysAndObjectsUsingBlock:^(NSString *  _Nonnull key, NSMapTable * _Nonnull mapTable, BOOL * _Nonnull stop) {
+    [self.alignmentConstraints enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSMapTable *mapTable, BOOL *stop) {
         [self.canvas removeConstraints:mapTable.fd_allObjects];
     }];
     [self.alignmentConstraints removeAllObjects];
@@ -293,7 +293,7 @@
         [self.canvasConnectionConstraints addObject:canvasFitConstraint];
     }
     
-    [canvasAttributes enumerateObjectsUsingBlock:^(NSNumber * _Nonnull canvasAttribute, NSUInteger idx, BOOL * _Nonnull stop) {
+    [canvasAttributes enumerateObjectsUsingBlock:^(NSNumber *canvasAttribute, NSUInteger idx, BOOL *stop) {
         NSLayoutAttribute attribute = canvasAttribute.integerValue;
         NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:[self viewOrGuideForLocationAttribute:attribute] attribute:attribute relatedBy:[self layoutRelationForCanvasConnectionForAttribute:attribute] toItem:self.canvas attribute:attribute multiplier:1 constant:0];
         constraint.identifier = @"FDSV-canvas-connection";
@@ -378,7 +378,7 @@
         [self.spanningLayoutGuide.systemConstraints addObject:constraint];
         
         //FDSV-spanning-boundary
-        [self.mutableItems enumerateObjectsUsingBlock:^(UIView * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.mutableItems enumerateObjectsUsingBlock:^(UIView *item, NSUInteger idx, BOOL *stop) {
             NSLayoutConstraint *minConstraint = [NSLayoutConstraint constraintWithItem:self.spanningLayoutGuide attribute:self.minAttributeForCanvasConnections relatedBy:[self layoutRelationForItemConnectionForAttribute:self.minAttributeForCanvasConnections] toItem:item attribute:self.minAttributeForCanvasConnections multiplier:1 constant:0];
             minConstraint.identifier = @"FDSV-spanning-boundary";
             minConstraint.priority = 999.5;
@@ -406,7 +406,7 @@
     self.hiddingDimensionConstraints = [NSMapTable weakToStrongObjectsMapTable];
     
     UIView *guardView = self.mutableItems.firstObject;
-    [self.mutableItems enumerateObjectsUsingBlock:^(UIView * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.mutableItems enumerateObjectsUsingBlock:^(UIView *item, NSUInteger idx, BOOL *stop) {
         if (self.alignment != UIStackViewAlignmentFill) {
             NSLayoutConstraint *ambiguitySuppressionConstraint = [NSLayoutConstraint constraintWithItem:item attribute:self.alignmentConstraintsFirstAttribute relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
             ambiguitySuppressionConstraint.identifier = @"FDSV-ambiguity-suppression";
