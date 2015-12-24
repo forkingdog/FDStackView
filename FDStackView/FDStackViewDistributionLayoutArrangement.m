@@ -135,7 +135,7 @@
         return;
     }
     
-    [[visiableItems subarrayWithRange:(NSRange){0, visiableItems.count - 1}] enumerateObjectsUsingBlock:^(UIView * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
+    [[visiableItems subarrayWithRange:(NSRange){0, visiableItems.count - 1}] enumerateObjectsUsingBlock:^(UIView *item, NSUInteger idx, BOOL *stop) {
         FDGapLayoutGuide *guide = [FDGapLayoutGuide new];
         [self.canvas addSubview:guide];
         guide.translatesAutoresizingMaskIntoConstraints = NO;
@@ -169,7 +169,7 @@
     if (visiableItems.count <= 1) return;
 
     FDGapLayoutGuide *firstGapGuide = [self.spacingOrCenteringGuides objectForKey:visiableItems.car];
-    [self.spacingOrCenteringGuides.fd_allObjects enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.spacingOrCenteringGuides.fd_allObjects enumerateObjectsUsingBlock:^(UIView *obj, NSUInteger idx, BOOL *stop) {
         if (firstGapGuide == obj) return;
         NSLayoutAttribute dimensionAttribute = [self dimensionAttributeForCurrentAxis];
         NSLayoutConstraint *related = [NSLayoutConstraint constraintWithItem:firstGapGuide attribute:dimensionAttribute relatedBy:NSLayoutRelationEqual toItem:obj attribute:dimensionAttribute multiplier:1 constant:0];
@@ -256,4 +256,5 @@
 - (void)updateCanvasConnectionConstraintsIfNecessary {
     [self resetAllConstraints];
 }
+
 @end

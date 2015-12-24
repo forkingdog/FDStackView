@@ -110,6 +110,7 @@
     }
     [self removeHiddenObserverForView:view];
     [self.mutableArrangedSubviews removeObject:view];
+    [view removeFromSuperview];
     [self.alignmentArrangement removeItem:view];
     [self.distributionArrangement removeItem:view];
     [self updateLayoutArrangements];
