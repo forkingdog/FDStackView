@@ -16,7 +16,7 @@ UIStackView is a very handy tool to build flow layout, but it's available only w
 #### Podfile
 ```ruby
 platform :ios, '7.0'
-pod "FDStackView", "1.0-alpha"
+pod "FDStackView", "1.0"
 ```
 
 **Import nothing, learn nothing, it just works.**
@@ -47,6 +47,10 @@ Now, use UIStackView as you like and its reactive options and live preview:
 
 - Xcode 7+ (For interface builder supports and the latest Objective-C Syntax)
 - Base SDK iOS 9.0+ (To link UIStackView symbol in UIKit)
+
+# Versions
+
+1.0 is the lastest version. We released it after we have used it in our official application. And it was successfully passed through the App Store's review. So you have no concern to usd it.
 
 # License
 

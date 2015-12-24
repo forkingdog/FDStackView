@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "FDStackView"
-  s.version      = "1.0-alpha"
+  s.version      = "1.0"
   s.summary      = "Use UIStackView as if it supports iOS6+."
 
   s.description  = <<-DESC
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.platform = :ios, "6.0"
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source = { :git => "https://github.com/forkingdog/FDStackView.git", :tag => "1.0-alpha" }
+  s.source = { :git => "https://github.com/forkingdog/FDStackView.git", :tag => "1.0" }
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.source_files  = "FDStackView/*.{h,m}"
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
