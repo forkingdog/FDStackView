@@ -50,7 +50,8 @@ Now, use UIStackView as you like and its reactive options and live preview:
 
 # Versions
 
-1.0 is the lastest version. We released it after we have used it in our official application. And it was successfully passed through the App Store's review. So you have no concern to usd it.
+- 1.0 is the lastest version. We released it after we have used it in our official application. And it was successfully passed through the App Store's review. So you have no concern to use it.
+- We will optimize performance in the next version.
 
 # License
 
