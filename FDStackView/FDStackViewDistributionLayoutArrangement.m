@@ -97,7 +97,7 @@
     for (UIView *view in visiableViews.cdr) {
         NSLayoutAttribute attribute = [self dimensionAttributeForCurrentAxis];
         NSLayoutRelation relation = NSLayoutRelationEqual;
-        CGFloat multiplier = self.distribution == UIStackViewDistributionFillEqually ? 1: ({
+        CGFloat multiplier = self.distribution == UIStackViewDistributionFillEqually ? 1 : ({
             CGSize size1 = offset.intrinsicContentSize;
             CGSize size2 = view.intrinsicContentSize;
             CGFloat multiplier = 1;
@@ -189,9 +189,9 @@
     [canvasConnectionConstraints addObject:head];
     head.identifier = @"FDSV-canvas-connection";
     
-    NSLayoutConstraint *end = [NSLayoutConstraint constraintWithItem:self.canvas attribute:minAttribute+1 relatedBy:NSLayoutRelationEqual toItem:self.items.lastObject attribute:minAttribute+1 multiplier:1 constant:0];
+    NSLayoutConstraint *end = [NSLayoutConstraint constraintWithItem:self.canvas attribute:minAttribute + 1 relatedBy:NSLayoutRelationEqual toItem:self.items.lastObject attribute:minAttribute + 1 multiplier:1 constant:0];
     [canvasConnectionConstraints addObject:end];
-    head.identifier = @"FDSV-canvas-connection";
+    end.identifier = @"FDSV-canvas-connection";
 
     self.canvasConnectionConstraints = canvasConnectionConstraints;
     [self.canvas addConstraints:canvasConnectionConstraints];

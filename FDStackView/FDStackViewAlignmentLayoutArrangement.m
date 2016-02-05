@@ -370,7 +370,7 @@
         [self.canvas removeConstraints:self.spanningLayoutGuide.systemConstraints];
         [self.spanningLayoutGuide.systemConstraints removeAllObjects];
         
-        //FD-spanning-fit
+        //FDSV-spanning-fit
         NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.spanningLayoutGuide attribute:self.spanningLayoutGuide.isHorizontal ? NSLayoutAttributeWidth : NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
         constraint.priority = 51;
         constraint.identifier = @"FDSV-spanning-fit";
@@ -403,7 +403,6 @@
     [self.alignmentConstraints setObject:[NSMapTable weakToWeakObjectsMapTable] forKey:self.alignmentConstraintsSecondKey];
     [self.canvas removeConstraints:self.hiddingDimensionConstraints.fd_allObjects];
     [self.hiddingDimensionConstraints removeAllObjects];
-    self.hiddingDimensionConstraints = [NSMapTable weakToStrongObjectsMapTable];
     
     UIView *guardView = self.mutableItems.firstObject;
     [self.mutableItems enumerateObjectsUsingBlock:^(UIView *item, NSUInteger idx, BOOL *stop) {
