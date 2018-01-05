@@ -106,6 +106,11 @@
             } else {
                 multiplier = size1.height / size2.height;
             }
+            if (CGSizeEqualToSize(size1, CGSizeZero) ||
+                CGSizeEqualToSize(size2, CGSizeZero)) {
+                multiplier = 1;
+            }
+            
             multiplier;
         });
         NSLayoutConstraint *equally = [NSLayoutConstraint constraintWithItem:offset attribute:attribute relatedBy:relation toItem:view attribute:attribute multiplier:multiplier constant:0];
